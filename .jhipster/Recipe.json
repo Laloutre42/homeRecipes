@@ -1,0 +1,39 @@
+{
+  "relationships": [],
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "comment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "link",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ingredients",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "typeOfRecipe",
+      "fieldType": "TypeOfRecipe",
+      "fieldValues": "ENTREE,PLAT,DESSERT,SNACK"
+    },
+    {
+      "fieldName": "image",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    }
+  ],
+  "changelogDate": "20160801053116",
+  "entityTableName": "recipe",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no"
+}

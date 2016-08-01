@@ -1,0 +1,104 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myWineLabel">Create or edit a Wine</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.wine.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.wine.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.wine.name"
+                    required />
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_appellation">Appellation</label>
+            <input type="text" class="form-control" name="appellation" id="field_appellation"
+                    ng-model="vm.wine.appellation"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_year">Year</label>
+            <input type="number" class="form-control" name="year" id="field_year"
+                    ng-model="vm.wine.year"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_typeOfWine">Type Of Wine</label>
+            <select class="form-control" name="typeOfWine" ng-model="vm.wine.typeOfWine" id="field_typeOfWine">
+                <option value="BLANC">BLANC</option>
+                <option value="ROUGE">ROUGE</option>
+                <option value="ROSE">ROSE</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_price">Price</label>
+            <input type="number" class="form-control" name="price" id="field_price"
+                    ng-model="vm.wine.price"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_stock">Stock</label>
+            <input type="number" class="form-control" name="stock" id="field_stock"
+                    ng-model="vm.wine.stock"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_note">Note</label>
+            <input type="number" class="form-control" name="note" id="field_note"
+                    ng-model="vm.wine.note"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_comment">Comment</label>
+            <input type="text" class="form-control" name="comment" id="field_comment"
+                    ng-model="vm.wine.comment"
+                     />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setImage($file, vm.wine)" ngf-pattern="'image/*'">
+            <label class="control-label" for="field_image">Image</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.wine.imageContentType + ';base64,' + vm.wine.image}}" style="max-height: 100px;" ng-if="vm.wine.image"/>
+                <div ng-if="vm.wine.image" class="help-block clearfix">
+                    <span class="pull-left">{{vm.wine.imageContentType}}, {{vm.byteSize(vm.wine.image)}}</span>
+                    <button ng-click="vm.wine.image=null;vm.wine.imageContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="file" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setImage($file, vm.wine)" accept="image/*">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="image" id="field_image"
+                    ng-model="vm.wine.image"
+                     />
+            <input type="hidden" class="form-control" name="imageContentType" id="field_imageContentType"
+                    ng-model="vm.wine.imageContentType" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

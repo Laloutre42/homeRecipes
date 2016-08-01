@@ -1,0 +1,14 @@
+entity Recipe {
+	recipeId Long,
+	recipeName String required,
+    comment String,
+    link String,
+    ingredients String,
+    typeOfRecipe TypeOfRecipe,
+    image ImageBlob
+}
+
+enum TypeOfRecipe {
+    ENTREE, PLAT, DESSERT, SNACK
+}
+	

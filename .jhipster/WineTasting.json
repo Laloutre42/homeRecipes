@@ -1,0 +1,29 @@
+{
+  "relationships": [
+    {
+      "relationshipName": "wine",
+      "otherEntityName": "wine",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "date",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "note",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "comment",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160801052829",
+  "entityTableName": "wine_tasting",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no"
+}

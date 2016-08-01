@@ -1,0 +1,38 @@
+entity Recipe {
+	name String required,
+    comment String,
+    link String,
+    ingredients String,
+    typeOfRecipe TypeOfRecipe,
+    image ImageBlob
+}
+
+enum TypeOfRecipe {
+    ENTREE, PLAT, DESSERT, SNACK
+}
+
+entity Wine {
+	name String required,
+    appellation String,    
+    year Integer,
+    typeOfWine TypeOfWine,
+    price Double,
+    stock Integer,
+    note Integer,
+  	comment String,
+    image ImageBlob
+}
+
+enum TypeOfWine {
+    BLANC, ROUGE, ROSE
+}
+
+entity WineTasting {
+	date ZonedDateTime,
+    note Integer,
+  	comment String
+}
+
+relationship OneToMany {
+	Wine{wineTasting} to WineTasting
+}
