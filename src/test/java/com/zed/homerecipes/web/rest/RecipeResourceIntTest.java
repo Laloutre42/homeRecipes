@@ -63,6 +63,15 @@ public class RecipeResourceIntTest {
     private static final Integer DEFAULT_NOTE = 0;
     private static final Integer UPDATED_NOTE = 1;
 
+    private static final Integer DEFAULT_DURATION = 1;
+    private static final Integer UPDATED_DURATION = 2;
+
+    private static final Integer DEFAULT_COMPLEXITY = 1;
+    private static final Integer UPDATED_COMPLEXITY = 2;
+
+    private static final Integer DEFAULT_PERSONS = 1;
+    private static final Integer UPDATED_PERSONS = 2;
+
     @Inject
     private RecipeRepository recipeRepository;
 
@@ -97,6 +106,9 @@ public class RecipeResourceIntTest {
         recipe.setImage(DEFAULT_IMAGE);
         recipe.setImageContentType(DEFAULT_IMAGE_CONTENT_TYPE);
         recipe.setNote(DEFAULT_NOTE);
+        recipe.setDuration(DEFAULT_DURATION);
+        recipe.setComplexity(DEFAULT_COMPLEXITY);
+        recipe.setPersons(DEFAULT_PERSONS);
     }
 
     @Test
@@ -123,6 +135,9 @@ public class RecipeResourceIntTest {
         assertThat(testRecipe.getImage()).isEqualTo(DEFAULT_IMAGE);
         assertThat(testRecipe.getImageContentType()).isEqualTo(DEFAULT_IMAGE_CONTENT_TYPE);
         assertThat(testRecipe.getNote()).isEqualTo(DEFAULT_NOTE);
+        assertThat(testRecipe.getDuration()).isEqualTo(DEFAULT_DURATION);
+        assertThat(testRecipe.getComplexity()).isEqualTo(DEFAULT_COMPLEXITY);
+        assertThat(testRecipe.getPersons()).isEqualTo(DEFAULT_PERSONS);
     }
 
     @Test
@@ -161,7 +176,10 @@ public class RecipeResourceIntTest {
                 .andExpect(jsonPath("$.[*].typeOfRecipe").value(hasItem(DEFAULT_TYPE_OF_RECIPE.toString())))
                 .andExpect(jsonPath("$.[*].imageContentType").value(hasItem(DEFAULT_IMAGE_CONTENT_TYPE)))
                 .andExpect(jsonPath("$.[*].image").value(hasItem(Base64Utils.encodeToString(DEFAULT_IMAGE))))
-                .andExpect(jsonPath("$.[*].note").value(hasItem(DEFAULT_NOTE)));
+                .andExpect(jsonPath("$.[*].note").value(hasItem(DEFAULT_NOTE)))
+                .andExpect(jsonPath("$.[*].duration").value(hasItem(DEFAULT_DURATION)))
+                .andExpect(jsonPath("$.[*].complexity").value(hasItem(DEFAULT_COMPLEXITY)))
+                .andExpect(jsonPath("$.[*].persons").value(hasItem(DEFAULT_PERSONS)));
     }
 
     @Test
@@ -182,7 +200,10 @@ public class RecipeResourceIntTest {
             .andExpect(jsonPath("$.typeOfRecipe").value(DEFAULT_TYPE_OF_RECIPE.toString()))
             .andExpect(jsonPath("$.imageContentType").value(DEFAULT_IMAGE_CONTENT_TYPE))
             .andExpect(jsonPath("$.image").value(Base64Utils.encodeToString(DEFAULT_IMAGE)))
-            .andExpect(jsonPath("$.note").value(DEFAULT_NOTE));
+            .andExpect(jsonPath("$.note").value(DEFAULT_NOTE))
+            .andExpect(jsonPath("$.duration").value(DEFAULT_DURATION))
+            .andExpect(jsonPath("$.complexity").value(DEFAULT_COMPLEXITY))
+            .andExpect(jsonPath("$.persons").value(DEFAULT_PERSONS));
     }
 
     @Test
@@ -211,6 +232,9 @@ public class RecipeResourceIntTest {
         updatedRecipe.setImage(UPDATED_IMAGE);
         updatedRecipe.setImageContentType(UPDATED_IMAGE_CONTENT_TYPE);
         updatedRecipe.setNote(UPDATED_NOTE);
+        updatedRecipe.setDuration(UPDATED_DURATION);
+        updatedRecipe.setComplexity(UPDATED_COMPLEXITY);
+        updatedRecipe.setPersons(UPDATED_PERSONS);
 
         restRecipeMockMvc.perform(put("/api/recipes")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -229,6 +253,9 @@ public class RecipeResourceIntTest {
         assertThat(testRecipe.getImage()).isEqualTo(UPDATED_IMAGE);
         assertThat(testRecipe.getImageContentType()).isEqualTo(UPDATED_IMAGE_CONTENT_TYPE);
         assertThat(testRecipe.getNote()).isEqualTo(UPDATED_NOTE);
+        assertThat(testRecipe.getDuration()).isEqualTo(UPDATED_DURATION);
+        assertThat(testRecipe.getComplexity()).isEqualTo(UPDATED_COMPLEXITY);
+        assertThat(testRecipe.getPersons()).isEqualTo(UPDATED_PERSONS);
     }
 
     @Test

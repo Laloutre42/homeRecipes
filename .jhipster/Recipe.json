@@ -39,6 +39,19 @@
             ],
             "fieldValidateRulesMin": "0",
             "fieldValidateRulesMax": "100"
+        },
+        {
+            "fieldName": "duration",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "complexity",
+            "fieldType": "Integer",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "persons",
+            "fieldType": "Integer"
         }
     ],
     "changelogDate": "20160801053116",

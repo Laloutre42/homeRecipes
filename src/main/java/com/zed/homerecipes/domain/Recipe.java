@@ -53,6 +53,15 @@ public class Recipe implements Serializable {
     @Column(name = "note")
     private Integer note;
 
+    @Column(name = "duration")
+    private Integer duration;
+
+    @Column(name = "complexity")
+    private Integer complexity;
+
+    @Column(name = "persons")
+    private Integer persons;
+
     public Long getId() {
         return id;
     }
@@ -125,6 +134,30 @@ public class Recipe implements Serializable {
         this.note = note;
     }
 
+    public Integer getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Integer duration) {
+        this.duration = duration;
+    }
+
+    public Integer getComplexity() {
+        return complexity;
+    }
+
+    public void setComplexity(Integer complexity) {
+        this.complexity = complexity;
+    }
+
+    public Integer getPersons() {
+        return persons;
+    }
+
+    public void setPersons(Integer persons) {
+        this.persons = persons;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -157,6 +190,9 @@ public class Recipe implements Serializable {
             ", image='" + image + "'" +
             ", imageContentType='" + imageContentType + "'" +
             ", note='" + note + "'" +
+            ", duration='" + duration + "'" +
+            ", complexity='" + complexity + "'" +
+            ", persons='" + persons + "'" +
             '}';
     }
 }

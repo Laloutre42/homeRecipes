@@ -2,9 +2,13 @@
 @import "_variables";
 @import "_bootswatch";
 
-.recipe-name{
+.recipe-name {
   color: darkred;
   font-weight: bold;
+}
+
+.white-space-pre-wrap {
+  white-space: pre-wrap;
 }
 
 .background-color-white {

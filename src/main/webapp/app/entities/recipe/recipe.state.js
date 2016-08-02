@@ -103,6 +103,9 @@
                                 image: null,
                                 imageContentType: null,
                                 note: null,
+                                duration: null,
+                                complexity: null,
+                                persons: null,
                                 id: null
                             };
                         }

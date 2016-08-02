@@ -14,5 +14,8 @@
   color: darkred;
   font-weight: bold; }
 
+.white-space-pre-wrap {
+  white-space: pre-wrap; }
+
 .background-color-white {
   background-color: white; }

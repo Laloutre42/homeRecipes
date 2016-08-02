@@ -15,6 +15,9 @@
                 <li class="list-group-item"><b>Note</b>:
                     <uib-rating ng-model="vm.recipe.note" max="5" readonly="true"></uib-rating>
                 </li>
+                <li class="list-group-item"><b>Complexity</b>:
+                    <uib-rating ng-model="vm.recipe.complexity" max="3" readonly="true"></uib-rating>
+                </li>
                 <li class="list-group-item">
                     <b>Link</b>: <a href="{{::recipe.link}}" target="_blank">Web site</a>
                 </li>
@@ -23,12 +26,12 @@
         <div class="col-sm-5">
             <ul class="list-group">
                 <li class="list-group-item">
-                    <h5><b>Ingredients</b></h5>
-                    <span>{{::vm.recipe.ingredients}}</span>
+                    <h5><b>Ingredients ({{::vm.recipe.persons}} persons)</b></h5>
+                    <span class="white-space-pre-wrap">{{::vm.recipe.ingredients}}</span>
                 </li>
                 <li class="list-group-item">
                     <h5><b>Comment</b></h5>
-                    <span>{{::vm.recipe.comment}}</span>                             
+                    <span>{{::vm.recipe.comment}}</span>
                 </li>
             </ul>
         </div>
