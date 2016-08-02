@@ -1,5 +1,5 @@
 <div>
-    <h2><span>Recipe</span> {{vm.recipe.id}}</h2>
+    <h2>{{vm.recipe.name}}</h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
 
@@ -7,12 +7,7 @@
         <div class="col-sm-4 well background-color-white text-center">
             <img data-ng-src="{{'data:' + vm.recipe.imageContentType + ';base64,' + vm.recipe.image}}" style="max-width: 320px"/>
         </div>
-        <div class="col-sm-4">
-            <h3>{{::vm.recipe.name}}</h3>
-            <span>{{::vm.recipe.typeOfRecipe}}</span><br>
-            <span></span><br>
-        </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
             <ul class="list-group">
                 <li class="list-group-item">
                     <b>Type</b>: {{::vm.recipe.typeOfRecipe}}
@@ -25,18 +20,19 @@
                 </li>
             </ul>
         </div>
+        <div class="col-sm-5">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <h5><b>Ingredients</b></h5>
+                    <span>{{::vm.recipe.ingredients}}</span>
+                </li>
+                <li class="list-group-item">
+                    <h5><b>Comment</b></h5>
+                    <span>{{::vm.recipe.comment}}</span>                             
+                </li>
+            </ul>
+        </div>
     </div>
-
-    <dl class="dl-horizontal jh-entity-details">
-        <dt><span>Comment</span></dt>
-        <dd>
-            <span>{{vm.recipe.comment}}</span>
-        </dd>
-        <dt><span>Ingredients</span></dt>
-        <dd>
-            <span>{{vm.recipe.ingredients}}</span>
-        </dd>
-    </dl>
 
     <button type="submit"
             ui-sref="{{ vm.previousState }}"
