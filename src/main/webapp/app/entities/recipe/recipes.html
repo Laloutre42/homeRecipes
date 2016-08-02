@@ -4,9 +4,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="recipe.new" >
+                <button class="btn btn-primary" ui-sref="recipe.new">
                     <span class="glyphicon glyphicon-plus"></span>
-                    <span >
+                    <span>
                         Create new Recipe
                     </span>
                 </button>
@@ -15,56 +15,57 @@
     </div>
     <br/>
     <div class="table-responsive">
-        <table class="jh-table table table-striped">
+        <table class="jh-table table table-condensed row-border table-hover v-middle">
             <thead>
-                <tr>
-                    <th><span>ID</span></th>
-                    <th><span>Name</span></th>
-                    <th><span>Comment</span></th>
-                    <th><span>Link</span></th>
-                    <th><span>Ingredients</span></th>
-                    <th><span>Type Of Recipe</span></th>
-                    <th><span>Image</span></th>
-                    <th></th>
-                </tr>
+            <tr>
+                <th><span>Image</span></th>
+                <th><span>Name</span></th>
+                <th><span>Type</span></th>
+                <th><span>Note</span></th>
+                <th><span>Link</span></th>
+                <th></th>
+            </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="recipe in vm.recipes track by recipe.id">
-                    <td><a ui-sref="recipe-detail({id:recipe.id})">{{recipe.id}}</a></td>
-                    <td>{{recipe.name}}</td>
-                    <td>{{recipe.comment}}</td>
-                    <td>{{recipe.link}}</td>
-                    <td>{{recipe.ingredients}}</td>
-                    <td>{{recipe.typeOfRecipe}}</td>
-                    <td>
-                        <a ng-if="recipe.image" ng-click="vm.openFile(recipe.imageContentType, recipe.image)">
-                            <img data-ng-src="{{'data:' + recipe.imageContentType + ';base64,' + recipe.image}}" style="max-height: 30px;"/>
-                        </a>
-                        <span ng-if="recipe.image">{{recipe.imageContentType}}, {{vm.byteSize(recipe.image)}}</span>
-                    </td>
-                    <td class="text-right">
-                        <div class="btn-group flex-btn-group-container">
-                            <button type="submit"
-                                    ui-sref="recipe-detail({id:recipe.id})"
-                                    class="btn btn-info btn-sm">
-                                <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-xs hidden-sm"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="recipe.edit({id:recipe.id})"
-                                    class="btn btn-primary btn-sm">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-xs hidden-sm"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="recipe.delete({id:recipe.id})"
-                                    class="btn btn-danger btn-sm">
-                                <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-xs hidden-sm"></span>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
+            <tr ng-repeat="recipe in vm.recipes track by recipe.id">
+                <td>
+                    <span ng-if="recipe.image">
+                        <img data-ng-src="{{'data:' + recipe.imageContentType + ';base64,' + recipe.image}}" style="max-width: 165px;"/>
+                    </span>
+                </td>
+                <td>
+                    <span ui-sref="recipe-detail({id:recipe.id})" class="recipe-name">{{recipe.name}}</span>
+                </td>
+                <td>{{recipe.typeOfRecipe}}</td>
+                <td>
+                    <uib-rating ng-model="recipe.note" max="5" readonly="true"></uib-rating>
+                </td>
+                <td>
+                    <a href="{{::recipe.link}}" target="_blank" type="button" class="fa fa-external-link edit btn btn-default btn-sm" uib-tooltip="Web site"></a>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                ui-sref="recipe-detail({id:recipe.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            <span class="hidden-xs hidden-sm"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="recipe.edit({id:recipe.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span class="hidden-xs hidden-sm"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="recipe.delete({id:recipe.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <span class="hidden-xs hidden-sm"></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>

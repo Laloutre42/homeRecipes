@@ -1,58 +1,62 @@
 {
-  "relationships": [
-    {
-      "relationshipType": "one-to-many",
-      "relationshipName": "wineTasting",
-      "otherEntityName": "wineTasting",
-      "otherEntityRelationshipName": "wine"
-    }
-  ],
-  "fields": [
-    {
-      "fieldName": "name",
-      "fieldType": "String",
-      "fieldValidateRules": [
-        "required"
-      ]
-    },
-    {
-      "fieldName": "appellation",
-      "fieldType": "String"
-    },
-    {
-      "fieldName": "year",
-      "fieldType": "Integer"
-    },
-    {
-      "fieldName": "typeOfWine",
-      "fieldType": "TypeOfWine",
-      "fieldValues": "BLANC,ROUGE,ROSE"
-    },
-    {
-      "fieldName": "price",
-      "fieldType": "Double"
-    },
-    {
-      "fieldName": "stock",
-      "fieldType": "Integer"
-    },
-    {
-      "fieldName": "note",
-      "fieldType": "Integer"
-    },
-    {
-      "fieldName": "comment",
-      "fieldType": "String"
-    },
-    {
-      "fieldName": "image",
-      "fieldType": "byte[]",
-      "fieldTypeBlobContent": "image"
-    }
-  ],
-  "changelogDate": "20160801053117",
-  "entityTableName": "wine",
-  "dto": "no",
-  "pagination": "no",
-  "service": "no"
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "wineTasting",
+            "otherEntityName": "wineTasting",
+            "otherEntityRelationshipName": "wine"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "appellation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "year",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "typeOfWine",
+            "fieldType": "TypeOfWine",
+            "fieldValues": "BLANC,ROUGE,ROSE"
+        },
+        {
+            "fieldName": "price",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "stock",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "note",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "comment",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "image",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "country",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160801053117",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "wine",
+    "pagination": "no"
 }

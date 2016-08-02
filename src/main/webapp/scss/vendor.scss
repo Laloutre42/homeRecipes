@@ -1,8 +1,12 @@
 $icon-font-path: "../fonts/";
 
+// Font awesome fonts
+$fa-font-path: "../../bower_components/font-awesome/fonts";
+
 /* Sass bower components will be injected here */
 /* bower:scss */
 @import "../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "../bower_components/font-awesome/scss/font-awesome.scss";
 /* endinject */
 /* bower:sass */
 /* endinject */

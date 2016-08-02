@@ -69,6 +69,8 @@ public class WineResourceIntTest {
     private static final byte[] UPDATED_IMAGE = TestUtil.createByteArray(2, "1");
     private static final String DEFAULT_IMAGE_CONTENT_TYPE = "image/jpg";
     private static final String UPDATED_IMAGE_CONTENT_TYPE = "image/png";
+    private static final String DEFAULT_COUNTRY = "AAAAA";
+    private static final String UPDATED_COUNTRY = "BBBBB";
 
     @Inject
     private WineRepository wineRepository;
@@ -106,6 +108,7 @@ public class WineResourceIntTest {
         wine.setComment(DEFAULT_COMMENT);
         wine.setImage(DEFAULT_IMAGE);
         wine.setImageContentType(DEFAULT_IMAGE_CONTENT_TYPE);
+        wine.setCountry(DEFAULT_COUNTRY);
     }
 
     @Test
@@ -134,6 +137,7 @@ public class WineResourceIntTest {
         assertThat(testWine.getComment()).isEqualTo(DEFAULT_COMMENT);
         assertThat(testWine.getImage()).isEqualTo(DEFAULT_IMAGE);
         assertThat(testWine.getImageContentType()).isEqualTo(DEFAULT_IMAGE_CONTENT_TYPE);
+        assertThat(testWine.getCountry()).isEqualTo(DEFAULT_COUNTRY);
     }
 
     @Test
@@ -174,7 +178,8 @@ public class WineResourceIntTest {
                 .andExpect(jsonPath("$.[*].note").value(hasItem(DEFAULT_NOTE)))
                 .andExpect(jsonPath("$.[*].comment").value(hasItem(DEFAULT_COMMENT.toString())))
                 .andExpect(jsonPath("$.[*].imageContentType").value(hasItem(DEFAULT_IMAGE_CONTENT_TYPE)))
-                .andExpect(jsonPath("$.[*].image").value(hasItem(Base64Utils.encodeToString(DEFAULT_IMAGE))));
+                .andExpect(jsonPath("$.[*].image").value(hasItem(Base64Utils.encodeToString(DEFAULT_IMAGE))))
+                .andExpect(jsonPath("$.[*].country").value(hasItem(DEFAULT_COUNTRY.toString())));
     }
 
     @Test
@@ -197,7 +202,8 @@ public class WineResourceIntTest {
             .andExpect(jsonPath("$.note").value(DEFAULT_NOTE))
             .andExpect(jsonPath("$.comment").value(DEFAULT_COMMENT.toString()))
             .andExpect(jsonPath("$.imageContentType").value(DEFAULT_IMAGE_CONTENT_TYPE))
-            .andExpect(jsonPath("$.image").value(Base64Utils.encodeToString(DEFAULT_IMAGE)));
+            .andExpect(jsonPath("$.image").value(Base64Utils.encodeToString(DEFAULT_IMAGE)))
+            .andExpect(jsonPath("$.country").value(DEFAULT_COUNTRY.toString()));
     }
 
     @Test
@@ -228,6 +234,7 @@ public class WineResourceIntTest {
         updatedWine.setComment(UPDATED_COMMENT);
         updatedWine.setImage(UPDATED_IMAGE);
         updatedWine.setImageContentType(UPDATED_IMAGE_CONTENT_TYPE);
+        updatedWine.setCountry(UPDATED_COUNTRY);
 
         restWineMockMvc.perform(put("/api/wines")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -248,6 +255,7 @@ public class WineResourceIntTest {
         assertThat(testWine.getComment()).isEqualTo(UPDATED_COMMENT);
         assertThat(testWine.getImage()).isEqualTo(UPDATED_IMAGE);
         assertThat(testWine.getImageContentType()).isEqualTo(UPDATED_IMAGE_CONTENT_TYPE);
+        assertThat(testWine.getCountry()).isEqualTo(UPDATED_COUNTRY);
     }
 
     @Test

@@ -105,6 +105,7 @@
                                 comment: null,
                                 image: null,
                                 imageContentType: null,
+                                country: null,
                                 id: null
                             };
                         }

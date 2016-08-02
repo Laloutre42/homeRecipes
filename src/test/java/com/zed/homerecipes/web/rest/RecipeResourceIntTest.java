@@ -60,6 +60,9 @@ public class RecipeResourceIntTest {
     private static final String DEFAULT_IMAGE_CONTENT_TYPE = "image/jpg";
     private static final String UPDATED_IMAGE_CONTENT_TYPE = "image/png";
 
+    private static final Integer DEFAULT_NOTE = 0;
+    private static final Integer UPDATED_NOTE = 1;
+
     @Inject
     private RecipeRepository recipeRepository;
 
@@ -93,6 +96,7 @@ public class RecipeResourceIntTest {
         recipe.setTypeOfRecipe(DEFAULT_TYPE_OF_RECIPE);
         recipe.setImage(DEFAULT_IMAGE);
         recipe.setImageContentType(DEFAULT_IMAGE_CONTENT_TYPE);
+        recipe.setNote(DEFAULT_NOTE);
     }
 
     @Test
@@ -118,6 +122,7 @@ public class RecipeResourceIntTest {
         assertThat(testRecipe.getTypeOfRecipe()).isEqualTo(DEFAULT_TYPE_OF_RECIPE);
         assertThat(testRecipe.getImage()).isEqualTo(DEFAULT_IMAGE);
         assertThat(testRecipe.getImageContentType()).isEqualTo(DEFAULT_IMAGE_CONTENT_TYPE);
+        assertThat(testRecipe.getNote()).isEqualTo(DEFAULT_NOTE);
     }
 
     @Test
@@ -155,7 +160,8 @@ public class RecipeResourceIntTest {
                 .andExpect(jsonPath("$.[*].ingredients").value(hasItem(DEFAULT_INGREDIENTS.toString())))
                 .andExpect(jsonPath("$.[*].typeOfRecipe").value(hasItem(DEFAULT_TYPE_OF_RECIPE.toString())))
                 .andExpect(jsonPath("$.[*].imageContentType").value(hasItem(DEFAULT_IMAGE_CONTENT_TYPE)))
-                .andExpect(jsonPath("$.[*].image").value(hasItem(Base64Utils.encodeToString(DEFAULT_IMAGE))));
+                .andExpect(jsonPath("$.[*].image").value(hasItem(Base64Utils.encodeToString(DEFAULT_IMAGE))))
+                .andExpect(jsonPath("$.[*].note").value(hasItem(DEFAULT_NOTE)));
     }
 
     @Test
@@ -175,7 +181,8 @@ public class RecipeResourceIntTest {
             .andExpect(jsonPath("$.ingredients").value(DEFAULT_INGREDIENTS.toString()))
             .andExpect(jsonPath("$.typeOfRecipe").value(DEFAULT_TYPE_OF_RECIPE.toString()))
             .andExpect(jsonPath("$.imageContentType").value(DEFAULT_IMAGE_CONTENT_TYPE))
-            .andExpect(jsonPath("$.image").value(Base64Utils.encodeToString(DEFAULT_IMAGE)));
+            .andExpect(jsonPath("$.image").value(Base64Utils.encodeToString(DEFAULT_IMAGE)))
+            .andExpect(jsonPath("$.note").value(DEFAULT_NOTE));
     }
 
     @Test
@@ -203,6 +210,7 @@ public class RecipeResourceIntTest {
         updatedRecipe.setTypeOfRecipe(UPDATED_TYPE_OF_RECIPE);
         updatedRecipe.setImage(UPDATED_IMAGE);
         updatedRecipe.setImageContentType(UPDATED_IMAGE_CONTENT_TYPE);
+        updatedRecipe.setNote(UPDATED_NOTE);
 
         restRecipeMockMvc.perform(put("/api/recipes")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -220,6 +228,7 @@ public class RecipeResourceIntTest {
         assertThat(testRecipe.getTypeOfRecipe()).isEqualTo(UPDATED_TYPE_OF_RECIPE);
         assertThat(testRecipe.getImage()).isEqualTo(UPDATED_IMAGE);
         assertThat(testRecipe.getImageContentType()).isEqualTo(UPDATED_IMAGE_CONTENT_TYPE);
+        assertThat(testRecipe.getNote()).isEqualTo(UPDATED_NOTE);
     }
 
     @Test

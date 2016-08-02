@@ -28,6 +28,7 @@
                     <th><span>Note</span></th>
                     <th><span>Comment</span></th>
                     <th><span>Image</span></th>
+                    <th><span>Country</span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -48,6 +49,7 @@
                         </a>
                         <span ng-if="wine.image">{{wine.imageContentType}}, {{vm.byteSize(wine.image)}}</span>
                     </td>
+                    <td>{{wine.country}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

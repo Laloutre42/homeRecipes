@@ -48,6 +48,11 @@ public class Recipe implements Serializable {
     @Column(name = "image_content_type")
     private String imageContentType;
 
+    @Min(value = 0)
+    @Max(value = 100)
+    @Column(name = "note")
+    private Integer note;
+
     public Long getId() {
         return id;
     }
@@ -112,6 +117,14 @@ public class Recipe implements Serializable {
         this.imageContentType = imageContentType;
     }
 
+    public Integer getNote() {
+        return note;
+    }
+
+    public void setNote(Integer note) {
+        this.note = note;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -143,6 +156,7 @@ public class Recipe implements Serializable {
             ", typeOfRecipe='" + typeOfRecipe + "'" +
             ", image='" + image + "'" +
             ", imageContentType='" + imageContentType + "'" +
+            ", note='" + note + "'" +
             '}';
     }
 }

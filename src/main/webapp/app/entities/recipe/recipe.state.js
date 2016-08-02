@@ -102,6 +102,7 @@
                                 typeOfRecipe: null,
                                 image: null,
                                 imageContentType: null,
+                                note: null,
                                 id: null
                             };
                         }

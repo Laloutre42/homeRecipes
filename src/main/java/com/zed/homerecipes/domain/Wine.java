@@ -60,6 +60,9 @@ public class Wine implements Serializable {
     @Column(name = "image_content_type")
     private String imageContentType;
 
+    @Column(name = "country")
+    private String country;
+
     @OneToMany(mappedBy = "wine")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -153,6 +156,14 @@ public class Wine implements Serializable {
         this.imageContentType = imageContentType;
     }
 
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
     public Set<WineTasting> getWineTastings() {
         return wineTastings;
     }
@@ -195,6 +206,7 @@ public class Wine implements Serializable {
             ", comment='" + comment + "'" +
             ", image='" + image + "'" +
             ", imageContentType='" + imageContentType + "'" +
+            ", country='" + country + "'" +
             '}';
     }
 }

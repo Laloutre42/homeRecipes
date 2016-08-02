@@ -67,7 +67,7 @@ class RecipeGatlingTest extends Simulation {
             .exec(http("Create new recipe")
             .post("/api/recipes")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "name":"SAMPLE_TEXT", "comment":"SAMPLE_TEXT", "link":"SAMPLE_TEXT", "ingredients":"SAMPLE_TEXT", "typeOfRecipe":null, "image":null}""")).asJSON
+            .body(StringBody("""{"id":null, "name":"SAMPLE_TEXT", "comment":"SAMPLE_TEXT", "link":"SAMPLE_TEXT", "ingredients":"SAMPLE_TEXT", "typeOfRecipe":null, "image":null, "note":"0"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_recipe_url"))).exitHereIfFailed
             .pause(10)
