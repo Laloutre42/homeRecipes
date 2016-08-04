@@ -1,7 +1,7 @@
 version: '2'
 services:
     homerecipes-app:
-        image: homerecipes
+        image: laloutre42/homerecipes
         external_links:
             - homerecipes-mysql:mysql
         environment:
