@@ -4,9 +4,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="wine.new" >
+                <button class="btn btn-primary" ui-sref="wine.new">
                     <span class="glyphicon glyphicon-plus"></span>
-                    <span >
+                    <span>
                         Create new Wine
                     </span>
                 </button>
@@ -15,64 +15,80 @@
     </div>
     <br/>
     <div class="table-responsive">
-        <table class="jh-table table table-striped">
+        <table class="jh-table table-striped table table-condensed row-border table-hover v-middle">
             <thead>
-                <tr>
-                    <th><span>ID</span></th>
-                    <th><span>Name</span></th>
-                    <th><span>Appellation</span></th>
-                    <th><span>Year</span></th>
-                    <th><span>Type Of Wine</span></th>
-                    <th><span>Price</span></th>
-                    <th><span>Stock</span></th>
-                    <th><span>Note</span></th>
-                    <th><span>Comment</span></th>
-                    <th><span>Image</span></th>
-                    <th><span>Country</span></th>
-                    <th></th>
-                </tr>
+            <tr>
+                <th><span>Image</span></th>
+                <th><span>Name</span></th>
+                <th><span>Country</span></th>
+                <th><span>Region</span></th>
+                <th><span>Appellation</span></th>
+                <th><span>Year</span></th>
+                <th><span>Type Of Wine</span></th>
+                <th><span>Stock</span></th>
+                <th><span>Note</span></th>
+                <th><span>Link</span></th>
+                <th></th>
+            </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="wine in vm.wines track by wine.id">
-                    <td><a ui-sref="wine-detail({id:wine.id})">{{wine.id}}</a></td>
-                    <td>{{wine.name}}</td>
-                    <td>{{wine.appellation}}</td>
-                    <td>{{wine.year}}</td>
-                    <td>{{wine.typeOfWine}}</td>
-                    <td>{{wine.price}}</td>
-                    <td>{{wine.stock}}</td>
-                    <td>{{wine.note}}</td>
-                    <td>{{wine.comment}}</td>
-                    <td>
-                        <a ng-if="wine.image" ng-click="vm.openFile(wine.imageContentType, wine.image)">
-                            <img data-ng-src="{{'data:' + wine.imageContentType + ';base64,' + wine.image}}" style="max-height: 30px;"/>
-                        </a>
-                        <span ng-if="wine.image">{{wine.imageContentType}}, {{vm.byteSize(wine.image)}}</span>
-                    </td>
-                    <td>{{wine.country}}</td>
-                    <td class="text-right">
-                        <div class="btn-group flex-btn-group-container">
-                            <button type="submit"
-                                    ui-sref="wine-detail({id:wine.id})"
-                                    class="btn btn-info btn-sm">
-                                <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-xs hidden-sm"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="wine.edit({id:wine.id})"
-                                    class="btn btn-primary btn-sm">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-xs hidden-sm"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="wine.delete({id:wine.id})"
-                                    class="btn btn-danger btn-sm">
-                                <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-xs hidden-sm"></span>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
+            <tr ng-repeat="wine in vm.wines track by wine.id"
+                class="cursor-pointer">
+                <td ui-sref="wine-detail({id:wine.id})">
+                    <span ng-if="wine.image">
+                        <img data-ng-src="{{'data:' + wine.imageContentType + ';base64,' + wine.image}}" style="max-width: 165px;"/>
+                    </span>
+                </td>
+                <td ui-sref="wine-detail({id:wine.id})">
+                    <span class="entity-list-name">{{wine.name}}</span>
+                </td>
+                <td ui-sref="wine-detail({id:wine.id})">
+                    {{wine.country}}
+                </td>
+                <td ui-sref="wine-detail({id:wine.id})">
+                    {{wine.region}}
+                </td>
+                <td ui-sref="wine-detail({id:wine.id})">
+                    {{wine.appellation}}
+                </td>
+                <td ui-sref="wine-detail({id:wine.id})">
+                    {{wine.year}}
+                </td>
+                <td ui-sref="wine-detail({id:wine.id})">
+                    {{wine.typeOfWine}}
+                </td>
+                <td ui-sref="wine-detail({id:wine.id})">
+                    {{wine.stock}}
+                </td>
+                <td ui-sref="wine-detail({id:wine.id})">
+                    {{wine.note}}
+                </td>
+                <td>
+                    <a ng-if="::wine.link" href="{{::wine.link}}" target="_blank" type="button" class="fa fa-external-link edit btn btn-default btn-sm" uib-tooltip="Web site"></a>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                ui-sref="wine-detail({id:wine.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            <span class="hidden-xs hidden-sm"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="wine.edit({id:wine.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span class="hidden-xs hidden-sm"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="wine.delete({id:wine.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <span class="hidden-xs hidden-sm"></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>

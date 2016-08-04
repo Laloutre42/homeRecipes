@@ -10,7 +10,7 @@
   font-family: fantasy;
   font-size: 22px; }
 
-.recipe-name {
+.entity-list-name {
   color: darkred;
   font-weight: bold; }
 
@@ -19,3 +19,6 @@
 
 .background-color-white {
   background-color: white; }
+
+.cursor-pointer {
+  cursor: pointer; }

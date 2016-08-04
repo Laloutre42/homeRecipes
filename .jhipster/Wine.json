@@ -52,6 +52,18 @@
         {
             "fieldName": "country",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "region",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "purchaseDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "link",
+            "fieldType": "String"
         }
     ],
     "changelogDate": "20160801053117",

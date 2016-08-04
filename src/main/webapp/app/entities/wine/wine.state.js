@@ -106,6 +106,9 @@
                                 image: null,
                                 imageContentType: null,
                                 country: null,
+                                region: null,
+                                purchaseDate: null,
+                                link: null,
                                 id: null
                             };
                         }

@@ -67,7 +67,7 @@ class WineGatlingTest extends Simulation {
             .exec(http("Create new wine")
             .post("/api/wines")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "name":"SAMPLE_TEXT", "appellation":"SAMPLE_TEXT", "year":"0", "typeOfWine":null, "price":null, "stock":"0", "note":"0", "comment":"SAMPLE_TEXT", "image":null, "country":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null, "name":"SAMPLE_TEXT", "appellation":"SAMPLE_TEXT", "year":"0", "typeOfWine":null, "price":null, "stock":"0", "note":"0", "comment":"SAMPLE_TEXT", "image":null, "country":"SAMPLE_TEXT", "region":"SAMPLE_TEXT", "purchaseDate":"2020-01-01T00:00:00.000Z", "link":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_wine_url"))).exitHereIfFailed
             .pause(10)

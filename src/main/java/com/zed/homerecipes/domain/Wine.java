@@ -7,6 +7,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Objects;
@@ -62,6 +63,15 @@ public class Wine implements Serializable {
 
     @Column(name = "country")
     private String country;
+
+    @Column(name = "region")
+    private String region;
+
+    @Column(name = "purchase_date")
+    private LocalDate purchaseDate;
+
+    @Column(name = "link")
+    private String link;
 
     @OneToMany(mappedBy = "wine")
     @JsonIgnore
@@ -164,6 +174,30 @@ public class Wine implements Serializable {
         this.country = country;
     }
 
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    public LocalDate getPurchaseDate() {
+        return purchaseDate;
+    }
+
+    public void setPurchaseDate(LocalDate purchaseDate) {
+        this.purchaseDate = purchaseDate;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
     public Set<WineTasting> getWineTastings() {
         return wineTastings;
     }
@@ -207,6 +241,9 @@ public class Wine implements Serializable {
             ", image='" + image + "'" +
             ", imageContentType='" + imageContentType + "'" +
             ", country='" + country + "'" +
+            ", region='" + region + "'" +
+            ", purchaseDate='" + purchaseDate + "'" +
+            ", link='" + link + "'" +
             '}';
     }
 }

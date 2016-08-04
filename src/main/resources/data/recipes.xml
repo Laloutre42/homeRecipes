@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:html="http://www.w3.org/TR/REC-html40">
+<Worksheet ss:Name="Table1">
+	<Table>
+		<Column ss:Index="1" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="2" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="3" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="4" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="5" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="6" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="7" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="8" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Row>
+			<Cell><Data ss:Type="String">id</Data></Cell>
+			<Cell><Data ss:Type="String">name</Data></Cell>
+			<Cell><Data ss:Type="String">comment</Data></Cell>
+			<Cell><Data ss:Type="String">link</Data></Cell>
+			<Cell><Data ss:Type="String">ingredients</Data></Cell>
+			<Cell><Data ss:Type="String">type_of_recipe</Data></Cell>
+			<Cell><Data ss:Type="String">image</Data></Cell>
+			<Cell><Data ss:Type="String">image_content_type</Data></Cell>
+			<Cell><Data ss:Type="String">note</Data></Cell>
+			<Cell><Data ss:Type="String">duration</Data></Cell>
+			<Cell><Data ss:Type="String">complexity</Data></Cell>
+			<Cell><Data ss:Type="String">persons</Data></Cell>
+		</Row>
+
+		<Row>
+			<Cell><Data ss:Type="String">1</Data></Cell>
+			<Cell><Data ss:Type="String">Crème catalane</Data></Cell>
+			<Cell><Data ss:Type="String">120g de sucre suffise par rapport au 250 de la recette</Data></Cell>
+			<Cell><Data ss:Type="String">https://www.meilleurduchef.com/cgi/mdc/l/fr/recette/creme-catalane.html</Data></Cell>
+			<Cell><Data ss:Type="String">1 litre de lait 6 jaunes d&#39;œufs 250 g de sucre en poudre 50 g de Maïzena 1 bâton de cannelle (facultatif) 1/2 citron (zestes) cassonade</Data></Cell>
+			<Cell><Data ss:Type="String">DESSERT</Data></Cell>
+			<Cell><Data ss:Type="String">...</Data></Cell>
+			<Cell><Data ss:Type="String">image/jpeg</Data></Cell>
+			<Cell><Data ss:Type="Number">4</Data></Cell>
+			<Cell><Data ss:Type="Number">30</Data></Cell>
+			<Cell><Data ss:Type="Number">1</Data></Cell>
+			<Cell><Data ss:Type="Number">5</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">2</Data></Cell>
+			<Cell><Data ss:Type="String">Gnocchis fritti</Data></Cell>
+			<Cell><Data ss:Type="String">Des gnocchis avec une pâte à pizza et de la tomate</Data></Cell>
+			<Cell><Data ss:Type="String">https://www.meilleurduchef.com/cgi/mdc/l/fr/recette/gnocchi-fritti.html</Data></Cell>
+			<Cell><Data ss:Type="String"></Data></Cell>
+			<Cell><Data ss:Type="String">PLAT</Data></Cell>
+			<Cell><Data ss:Type="String">...</Data></Cell>
+			<Cell><Data ss:Type="String">image/jpeg</Data></Cell>
+			<Cell><Data ss:Type="Number">3</Data></Cell>
+			<Cell><Data ss:Type="Number"></Data></Cell>
+			<Cell><Data ss:Type="Number"></Data></Cell>
+			<Cell><Data ss:Type="Number"></Data></Cell>
+		</Row>	</Table>
+</Worksheet>
+</Workbook>

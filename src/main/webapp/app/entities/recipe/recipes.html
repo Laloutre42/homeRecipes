@@ -15,7 +15,7 @@
     </div>
     <br/>
     <div class="table-responsive">
-        <table class="jh-table table table-condensed row-border table-hover v-middle">
+        <table class="jh-table table-striped table table-condensed row-border table-hover v-middle">
             <thead>
             <tr>
                 <th><span>Image</span></th>
@@ -27,17 +27,20 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="recipe in vm.recipes track by recipe.id">
-                <td>
+            <tr ng-repeat="recipe in vm.recipes track by recipe.id"
+                class="cursor-pointer">
+                <td ui-sref="recipe-detail({id:recipe.id})">
                     <span ng-if="recipe.image">
                         <img data-ng-src="{{'data:' + recipe.imageContentType + ';base64,' + recipe.image}}" style="max-width: 165px;"/>
                     </span>
                 </td>
-                <td>
-                    <span ui-sref="recipe-detail({id:recipe.id})" class="recipe-name">{{recipe.name}}</span>
+                <td ui-sref="recipe-detail({id:recipe.id})">
+                    <span class="entity-list-name">{{recipe.name}}</span>
                 </td>
-                <td>{{recipe.typeOfRecipe}}</td>
-                <td>
+                <td ui-sref="recipe-detail({id:recipe.id})">
+                    {{recipe.typeOfRecipe}}
+                </td>
+                <td ui-sref="recipe-detail({id:recipe.id})">
                     <uib-rating ng-model="recipe.note" max="5" readonly="true"></uib-rating>
                 </td>
                 <td>

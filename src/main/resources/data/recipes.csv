@@ -1,0 +1,9 @@
+id,name,comment,link,ingredients,type_of_recipe,image,image_content_type,note,duration,complexity,persons
+1,"Crème catalane","120g de sucre suffise par rapport au 250 de la recette",https://www.meilleurduchef.com/cgi/mdc/l/fr/recette/creme-catalane.html,"1 litre de lait
+6 jaunes d'œufs
+250 g de sucre en poudre
+50 g de Maïzena
+1 bâton de cannelle (facultatif)
+1/2 citron (zestes)
+cassonade",DESSERT,...,image/jpeg,4,30,1,5
+2,"Gnocchis fritti","Des gnocchis avec une pâte à pizza et de la tomate",https://www.meilleurduchef.com/cgi/mdc/l/fr/recette/gnocchi-fritti.html,NULL,PLAT,...,image/jpeg,3,NULL,NULL,NULL

@@ -1,8 +1,8 @@
 // Custom Theme
-@import "_variables";
-@import "_bootswatch";
+@import "_variables.scss";
+@import "_bootswatch.scss";
 
-.recipe-name {
+.entity-list-name {
   color: darkred;
   font-weight: bold;
 }
@@ -13,4 +13,8 @@
 
 .background-color-white {
   background-color: white;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }

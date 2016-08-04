@@ -11,5 +11,7 @@
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="classpath:config/liquibase/changelog/20160801052829_added_entity_constraints_WineTasting.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20160801053130_update_entity_Recipe.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160801153130_update_entity_Wine.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160801153131_update_entity_Wine.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

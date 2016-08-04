@@ -97,6 +97,28 @@
                     ng-model="vm.wine.country"
                      />
         </div>
+        <div class="form-group">
+            <label class="control-label" for="field_region">Region</label>
+            <input type="text" class="form-control" name="region" id="field_region"
+                    ng-model="vm.wine.region"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_purchaseDate">Purchase Date</label>
+                <div class="input-group">
+                    <input id="field_purchaseDate" type="text" class="form-control" name="purchaseDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.wine.purchaseDate" is-open="vm.datePickerOpenStatus.purchaseDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('purchaseDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_link">Link</label>
+            <input type="text" class="form-control" name="link" id="field_link"
+                    ng-model="vm.wine.link"
+                     />
+        </div>
 
     </div>
     <div class="modal-footer">
