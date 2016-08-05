@@ -1,15 +1,3 @@
-.bagofood-table-list > thead > tr > th {
-  border-bottom: none;
-  color: steelblue;
-  font-size: 15px;
-  font-weight: 800; }
-
-.panel-title-list {
-  margin-top: 8px;
-  margin-left: 20px;
-  font-family: fantasy;
-  font-size: 22px; }
-
 .entity-list-name {
   color: darkred;
   font-weight: bold; }

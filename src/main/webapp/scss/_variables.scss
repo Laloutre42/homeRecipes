@@ -126,7 +126,7 @@ $caret-width-large:         5px !default;
 //
 //## Customizes the `.table` component with basic values, each used across all table variations.
 
-//** Padding for `<th>`s and `<td>`s.
+//** Padding for `<th>`s and `<td>`s. 
 $table-cell-padding:            8px !default;
 //** Padding for cells in `.table-condensed`.
 $table-condensed-cell-padding:  5px !default;
@@ -136,7 +136,7 @@ $table-bg:                      transparent !default;
 //** Background color used for `.table-striped`.
 $table-bg-accent:               #f9f9f9 !default;
 //** Background color used for `.table-hover`.
-$table-bg-hover:                #f5f5f5 !default;
+$table-bg-hover:                #f0f0f0 !default;
 $table-bg-active:               $table-bg-hover !default;
 
 //** Border color for table and cell borders.

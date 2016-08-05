@@ -15,52 +15,32 @@
     </div>
     <br/>
     <div class="table-responsive">
-        <table class="jh-table table-striped table table-condensed row-border table-hover v-middle">
-            <thead>
-            <tr>
-                <th><span>Image</span></th>
-                <th><span>Name</span></th>
-                <th><span>Country</span></th>
-                <th><span>Region</span></th>
-                <th><span>Appellation</span></th>
-                <th><span>Year</span></th>
-                <th><span>Type Of Wine</span></th>
-                <th><span>Stock</span></th>
-                <th><span>Note</span></th>
-                <th><span>Link</span></th>
-                <th></th>
-            </tr>
-            </thead>
+        <table ng-table="vm.wines" class="jh-table table-striped table table-condensed row-border table-hover v-middle">
             <tbody>
-            <tr ng-repeat="wine in vm.wines track by wine.id"
+            <tr ng-repeat="wine in $data track by wine.id"
                 class="cursor-pointer">
-                <td ui-sref="wine-detail({id:wine.id})">
-                    <span ng-if="wine.image">
-                        <img data-ng-src="{{'data:' + wine.imageContentType + ';base64,' + wine.image}}" style="max-width: 165px;"/>
-                    </span>
-                </td>
-                <td ui-sref="wine-detail({id:wine.id})">
+                <td data-title="'Name'" filter="{name: 'text'}" sortable="'name'" ui-sref="wine-detail({id:wine.id})">
                     <span class="entity-list-name">{{wine.name}}</span>
                 </td>
-                <td ui-sref="wine-detail({id:wine.id})">
+                <td data-title="'Country'" filter="{country: 'text'}" sortable="'country'" ui-sref="wine-detail({id:wine.id})">
                     {{wine.country}}
                 </td>
-                <td ui-sref="wine-detail({id:wine.id})">
+                <td data-title="'Region'" filter="{region: 'text'}" sortable="'region'" ui-sref="wine-detail({id:wine.id})">
                     {{wine.region}}
                 </td>
-                <td ui-sref="wine-detail({id:wine.id})">
+                <td data-title="'Appellation'" filter="{appellation: 'text'}" sortable="'appellation'" ui-sref="wine-detail({id:wine.id})">
                     {{wine.appellation}}
                 </td>
-                <td ui-sref="wine-detail({id:wine.id})">
+                <td data-title="'Year'" filter="{year: 'number'}" sortable="'year'" ui-sref="wine-detail({id:wine.id})">
                     {{wine.year}}
                 </td>
-                <td ui-sref="wine-detail({id:wine.id})">
+                <td data-title="'Type'" filter="{typeOfWine: 'text'}" sortable="'typeOfWine'" ui-sref="wine-detail({id:wine.id})">
                     {{wine.typeOfWine}}
                 </td>
-                <td ui-sref="wine-detail({id:wine.id})">
+                <td data-title="'Stock'" filter="{stock: 'number'}" sortable="'stock'" ui-sref="wine-detail({id:wine.id})">
                     {{wine.stock}}
                 </td>
-                <td ui-sref="wine-detail({id:wine.id})">
+                <td data-title="'Note'" filter="{note: 'number'}" sortable="'note'" ui-sref="wine-detail({id:wine.id})">
                     {{wine.note}}
                 </td>
                 <td>

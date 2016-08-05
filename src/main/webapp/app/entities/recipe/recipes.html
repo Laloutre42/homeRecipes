@@ -15,32 +15,22 @@
     </div>
     <br/>
     <div class="table-responsive">
-        <table class="jh-table table-striped table table-condensed row-border table-hover v-middle">
-            <thead>
-            <tr>
-                <th><span>Image</span></th>
-                <th><span>Name</span></th>
-                <th><span>Type</span></th>
-                <th><span>Note</span></th>
-                <th><span>Link</span></th>
-                <th></th>
-            </tr>
-            </thead>
+        <table ng-table="vm.recipes" class="jh-table table-striped table table-condensed row-border table-hover v-middle">
             <tbody>
-            <tr ng-repeat="recipe in vm.recipes track by recipe.id"
+            <tr ng-repeat="recipe in $data track by recipe.id"
                 class="cursor-pointer">
                 <td ui-sref="recipe-detail({id:recipe.id})">
                     <span ng-if="recipe.image">
                         <img data-ng-src="{{'data:' + recipe.imageContentType + ';base64,' + recipe.image}}" style="max-width: 165px;"/>
                     </span>
                 </td>
-                <td ui-sref="recipe-detail({id:recipe.id})">
+                <td data-title="'Name'" filter="{name: 'text'}" sortable="'name'" sortable="'name'" data-title="Namee" ui-sref="recipe-detail({id:recipe.id})">
                     <span class="entity-list-name">{{recipe.name}}</span>
                 </td>
-                <td ui-sref="recipe-detail({id:recipe.id})">
+                <td data-title="'Type'" filter="{typeOfRecipe: 'number'}" sortable="'typeOfRecipe'" ui-sref="recipe-detail({id:recipe.id})"> 
                     {{recipe.typeOfRecipe}}
                 </td>
-                <td ui-sref="recipe-detail({id:recipe.id})">
+                <td data-title="'Note'" filter="{note: 'number'}" sortable="'note'" ui-sref="recipe-detail({id:recipe.id})">
                     <uib-rating ng-model="recipe.note" max="5" readonly="true"></uib-rating>
                 </td>
                 <td>
